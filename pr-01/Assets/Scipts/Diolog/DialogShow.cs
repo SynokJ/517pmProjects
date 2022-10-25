@@ -22,7 +22,7 @@ public class DialogShow : MonoBehaviour
     public void ShowDialogue()
     {
         _dialogueWindow.SetActive(!_dialogueWindow.activeSelf);
-
+        StartCoroutine(ShowAnswers());
     }
 
     public void InitMessage(string message)
@@ -31,14 +31,38 @@ public class DialogShow : MonoBehaviour
         StartCoroutine(TypeMessage(message));
     }
 
-    private IEnumerator ShowAswers()
+    private IEnumerator ShowAnswers()
     {
-        _inventoryAnim.SetTrigger("on_hide");
-        _answersAnim.SetTrigger("on_show");
+        string res = default;
+        ShowInteractionPanel(_answersAnim, _dialogAnswerPanel, ref res);
+        ShowInteractionPanel(_inventoryAnim, _inventoryPanel, ref res);
 
-        yield return new WaitForSeconds(1.0f);
-        _dialogAnswerPanel.SetActive(!_dialogAnswerPanel.activeSelf);
+        yield return new WaitForSeconds(GetTheLongerClip());
+
+        Debug.Log(res);
+
+        if (res.Equals(_dialogAnswerPanel.name))
+            _dialogAnswerPanel.SetActive(false);
+        else if (res.Equals(_inventoryPanel.name))
+            _inventoryPanel.SetActive(false);
     }
+
+    private void ShowInteractionPanel(Animator anim, GameObject panel, ref string res)
+    {
+        if (panel.activeSelf)
+        {
+            anim.SetTrigger("on_hide");
+            res = panel.name;
+        }
+        else
+        {
+            panel.SetActive(true);
+            anim.SetTrigger("on_show");
+        }
+    }
+
+    private float GetTheLongerClip() =>
+        Mathf.Max(_inventoryAnim.GetCurrentAnimatorStateInfo(0).length, _answersAnim.GetCurrentAnimatorStateInfo(0).length);
 
     private IEnumerator TypeMessage(string message)
     {

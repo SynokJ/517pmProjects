@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InventoryShow : MonoBehaviour
 {
 
-    [SerializeField] private List<Image> _inventorySlots = new List<Image>();
+    [SerializeField] private List<InventorySlot> _inventorySlots = new List<InventorySlot>();
 
     private int _lastIndex = 0;
     private const int _INVENTORY_MAX_SIZE = 10;
@@ -16,7 +16,7 @@ public class InventoryShow : MonoBehaviour
         if (_lastIndex >= _INVENTORY_MAX_SIZE)
             return;
 
-        _inventorySlots[_lastIndex].sprite = items.sprite;
+        _inventorySlots[_lastIndex].InitSlot(items.sprite);
         _lastIndex++;
     }
 }

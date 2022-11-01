@@ -7,6 +7,7 @@ public class PlayerTake : MonoBehaviour
 
     [SerializeField] private PlayerWalk _walk;
     [SerializeField] private Inventory _inventory;
+    [SerializeField] private DialogueStart _dialogueStart;
 
     private const float _TAKE_RADIUS = 1.0f;
     private ICollectable _collectable;

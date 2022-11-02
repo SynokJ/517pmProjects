@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerTake : MonoBehaviour
@@ -8,11 +6,13 @@ public class PlayerTake : MonoBehaviour
     [SerializeField] private PlayerWalk _walk;
     [SerializeField] private Inventory _inventory;
     [SerializeField] private DialogueStart _dialogueStart;
+    [SerializeField] private SpeachWindow _playerSpeach;
 
     private const float _TAKE_RADIUS = 1.0f;
-    private ICollectable _collectable;
     private SpriteRenderer _spriteRenderer;
+    private ICollectable _collectable;
     private ISpeakable _speakable;
+    private I_Interactable _interactable;
 
     private void Start()
     {
@@ -25,17 +25,47 @@ public class PlayerTake : MonoBehaviour
 
         foreach (Collider2D hit in hits)
         {
-            _collectable = hit.GetComponent<ICollectable>();
-            _spriteRenderer = hit.GetComponentInChildren<SpriteRenderer>();
-            if (_collectable != null)
-                _inventory.AddInventoryItem(new InventoryItem(_collectable.OnCollect(), _spriteRenderer.sprite));
-
-            _speakable = hit.GetComponentInChildren<ISpeakable>();
-            if (_speakable != null)
+            if (IsCollectable(hit.gameObject))
             {
-                var dialogue = hit.GetComponent<DialogueShow>();
+                _spriteRenderer = hit.GetComponentInChildren<SpriteRenderer>();
+                if (_collectable != null)
+                    _inventory.AddInventoryItem(new InventoryItem(_collectable.OnCollect(), _spriteRenderer.sprite));
+                break;
+            }
+            else if (IsSpeakable(hit.gameObject))
+            {
+                var dialogue = hit.GetComponent<SpeachWindow>();
                 _dialogueStart.StartDialogue(dialogue, _speakable.StartDialogue());
+                break;
+            }
+            else if (IsInteractable(hit.gameObject))
+            {
+                _playerSpeach.InitMessage(_interactable.OnInteract());
+                break;
+            }
+            else if (_playerSpeach.IsPanelActive() || _dialogueStart.IsDialogueActive())
+            {
+                _playerSpeach.HideMessage();
+                _dialogueStart.EndDialogue();
             }
         }
+    }
+
+    private bool IsCollectable(GameObject hit)
+    {
+        _collectable = hit.GetComponent<ICollectable>();
+        return _collectable != null;
+    }
+
+    private bool IsSpeakable(GameObject hit)
+    {
+        _speakable = hit.GetComponentInChildren<ISpeakable>();
+        return _speakable != null;
+    }
+
+    private bool IsInteractable(GameObject hit)
+    {
+        _interactable = hit.GetComponentInChildren<I_Interactable>();
+        return _interactable != null;
     }
 }

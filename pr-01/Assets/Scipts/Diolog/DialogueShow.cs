@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-public class DialogShow : MonoBehaviour
+public class DialogueShow : MonoBehaviour
 {
 
     [SerializeField] private GameObject _dialogueWindow;

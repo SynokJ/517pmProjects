@@ -12,6 +12,7 @@ public class PlayerTake : MonoBehaviour
     private const float _TAKE_RADIUS = 1.0f;
     private ICollectable _collectable;
     private SpriteRenderer _spriteRenderer;
+    private ISpeakable _speakable;
 
     private void Start()
     {
@@ -27,9 +28,13 @@ public class PlayerTake : MonoBehaviour
             _collectable = hit.GetComponent<ICollectable>();
             _spriteRenderer = hit.GetComponentInChildren<SpriteRenderer>();
             if (_collectable != null)
-            {
-                Debug.Log("Collectable is detected => " + Time.time);
                 _inventory.AddInventoryItem(new InventoryItem(_collectable.OnCollect(), _spriteRenderer.sprite));
+
+            _speakable = hit.GetComponentInChildren<ISpeakable>();
+            if (_speakable != null)
+            {
+                var dialogue = hit.GetComponent<DialogueShow>();
+                _dialogueStart.StartDialogue(dialogue, _speakable.StartDialogue());
             }
         }
     }

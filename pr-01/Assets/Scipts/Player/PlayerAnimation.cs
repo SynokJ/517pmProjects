@@ -8,11 +8,11 @@ public class PlayerAnimation : AnimationSwitcher
 
     public void SetAnimationByDirection(Vector2 dir)
     {
-        if (dir.y > 0 && dir.x == 0)
+        if (dir.y > 0 && dir.x > 0 && dir.x < 0.5f)
             PlayAnimationByName(_MOVE_UP);
-        else if (dir.y >= 0 && dir.y <= 0.5f && dir.x > 0)
+        else if (dir.x > 0)
             PlayAnimationByName(_MOVE_RIGHT);
-        else if (dir.y >= 0 && dir.y <= 0.5f && dir.x < 0)
+        else if (dir.x < 0)
             PlayAnimationByName(_MOVE_LEFT);
     }
 

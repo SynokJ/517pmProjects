@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class PlayerWalk : MonoBehaviour
 {
-
+    [Header("Walk Parametes: ")]
     [SerializeField] private PathFinding _pathFinding;
+
+    [Header("Player Parameters: ")]
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private PlayerAnimation _playerAnimation;
 
@@ -19,9 +21,20 @@ public class PlayerWalk : MonoBehaviour
 
     private void Start()
     {
-        _playerInput.OnMoved += OnMove;
         _camera = Camera.main;
     }
+
+    #region Subscription On Event
+    private void OnEnable()
+    {
+        _playerInput.OnMoved += OnMove;
+    }
+
+    private void OnDisable()
+    {
+        _playerInput.OnMoved -= OnMove;
+    }
+    #endregion
 
     private void FixedUpdate()
     {
@@ -34,11 +47,10 @@ public class PlayerWalk : MonoBehaviour
         MoveThroughSteps();
     }
 
-    private bool IsPlayerReachedDestination() => _steps == null || _steps.Count == 0;
 
     private void MoveThroughSteps()
     {
-        if (Vector2.Distance(_steps[0].position, transform.position) <= 0.01f)
+        if (CanSwitchStep())
             SetTheNextStep();
         else
             MoveToDestination();
@@ -46,7 +58,11 @@ public class PlayerWalk : MonoBehaviour
 
     private void MoveToDestination()
     {
-        transform.position = Vector2.MoveTowards(transform.position, _steps[0].position, _MOVE_SPEED * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(
+                    transform.position,
+                    _steps[0].position,
+                    _MOVE_SPEED * Time.deltaTime
+                );
 
         if (_steps.Count > 0)
             _playerAnimation.SetAnimationByDirection(_steps[0].position - transform.position);
@@ -66,6 +82,14 @@ public class PlayerWalk : MonoBehaviour
         _destinationPoint = _camera.ScreenToWorldPoint(touchPos);
         _pathFinding.InitPath(transform.position, _destinationPoint);
         _steps = _pathFinding.GetPath();
+    
         _playerAnimation.ResetAnimations();
     }
+
+    private bool IsPlayerReachedDestination()
+        => _steps == null || _steps.Count == 0;
+
+    private bool CanSwitchStep()
+        => Vector2.Distance(_steps[0].position, transform.position) <= 0.01f;
+
 }

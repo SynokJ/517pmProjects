@@ -5,10 +5,11 @@ public abstract class AnimationSwitcher : MonoBehaviour
     [SerializeField] protected Animator _anim;
     string _prevAnimName = default;
 
-    //public abstract void SetBoolByName();
-
     protected virtual void PlayAnimationByName(string name)
     {
+        if (_prevAnimName != null && !_prevAnimName.Equals(name))
+            return;
+
         if (!string.IsNullOrEmpty(_prevAnimName))
             _anim.SetBool(name, false);
 

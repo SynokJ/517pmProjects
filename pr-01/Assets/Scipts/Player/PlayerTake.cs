@@ -2,25 +2,41 @@ using UnityEngine;
 
 public class PlayerTake : MonoBehaviour
 {
-
+    [Header("Take Parameters: ")]
     [SerializeField] private PlayerWalk _walk;
     [SerializeField] private Inventory _inventory;
+
+    [Header("Dialogue Parameters: ")]
     [SerializeField] private DialogueStart _dialogueStart;
     [SerializeField] private SpeachWindow _playerSpeach;
 
     private const float _TAKE_RADIUS = 1.0f;
     private SpriteRenderer _spriteRenderer;
+
     private ICollectable _collectable;
     private ISpeakable _speakable;
     private I_Interactable _interactable;
 
-    private void Start()
+    #region Subscription On Event
+    private void OnEnable()
     {
-        _walk.OnArrived += OnTakeItem;
+        _walk.OnArrived += OnDestinationReached;
     }
 
-    public void OnTakeItem()
+    private void OnDisable()
     {
+        _walk.OnArrived -= OnDestinationReached;
+    }
+    #endregion
+
+    /// <summary>
+    /// Weird Method == Bolachka :(
+    /// PLS HEAL ME RIGHT NOW!!!
+    /// </summary>
+    public void OnDestinationReached()
+    {
+        _517pm.Debugger.CustomDebugger.ItWorks(true);
+
         var hits = Physics2D.OverlapCircleAll(transform.position, _TAKE_RADIUS);
 
         foreach (Collider2D hit in hits)

@@ -12,10 +12,6 @@ public class Speach
 
     public string GetInitPhrase() => _initPhrase;
 
-    /// TODO
-    /// Devide a speach into independent phrases
-    //public string NextPhrase() => 
-
     public bool TryGetSpeachByIndex(int index, out string res)
     {
         res = _speach[index];

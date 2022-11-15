@@ -3,18 +3,21 @@ using UnityEngine;
 
 public class DialogueStart : MonoBehaviour
 {
+    [Header("Player Speach paramters: ")]
     [SerializeField] private SpeachWindow _player;
-    [SerializeField] private AnswersWindow _playerAnswers;
+    [SerializeField] private AnswersAnimation _playerAnswers;
 
     private SpeachWindow _other;
-    private bool _isActive;
+    private bool _isStarted;
 
     private Speach _playerSpeach;
     private Speach _otherSpeach;
 
+    private string _playerText;
+    private string _otherText;
+
     public void StartDialogue(SpeachWindow other, SpeachSO speaches)
     {
-        _isActive = true;
         _other = other;
 
         InitSpeaches(speaches);
@@ -26,14 +29,14 @@ public class DialogueStart : MonoBehaviour
         if (_other == null)
             return;
 
-        _isActive = false;
+        _isStarted = false;
 
         _playerAnswers.HideDialogue();
         _other.HideMessage();
         _other = null;
     }
 
-    public bool IsDialogueActive() => _isActive;
+    public bool IsDialogueActive() => _isStarted;
 
     private void InitSpeaches(SpeachSO speaches)
     {
@@ -43,19 +46,31 @@ public class DialogueStart : MonoBehaviour
 
     private void ShowInitSpeaches()
     {
-        _player.InitMessage(_playerSpeach.GetInitPhrase());
-        StartCoroutine(OnShown());
+        StartCoroutine(OnShown(_playerSpeach.GetInitPhrase(), _otherSpeach.GetInitPhrase()));
     }
 
-    private IEnumerator OnShown()
+    private IEnumerator OnShown(string playerMessage, string otherMessage)
     {
+        _player.InitMessage(playerMessage);
+
         yield return new WaitUntil(() => !_player.isTyping);
-        _other.InitMessage(_otherSpeach.GetInitPhrase());
+        _other.InitMessage(otherMessage);
+        _517pm.Debugger.CustomDebugger.ItWorks();
+
+        if (_isStarted)
+            yield break;
 
         yield return new WaitUntil(() => !_other.isTyping);
         _playerAnswers.ShowDialogue();
-
-        yield return new WaitUntil(() => !_playerAnswers.isMoving);
-        _player.HideMessage();
+        _isStarted = true;
     }
+
+    public void AnswerByIndexIsSelected(int index)
+    {
+        if (CanTakeThisAnswer(index))
+            StartCoroutine(OnShown(_playerText, _otherText));
+    }
+
+    public bool CanTakeThisAnswer(int id)
+        => _playerSpeach.TryGetSpeachByIndex(id, out _playerText) && _otherSpeach.TryGetSpeachByIndex(id, out _otherText);
 }

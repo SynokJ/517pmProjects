@@ -14,17 +14,23 @@ public class PlayerInput : MonoBehaviour
         if (Input.touchCount > 0)
         {
             _currentTouch = Input.GetTouch(0);
-
-            if (_currentTouch.phase == TouchPhase.Began && !EventSystem.current.IsPointerOverGameObject(_currentTouch.fingerId))
-            {
-                _isInTouched = true;
-                OnMoved?.Invoke(_currentTouch.position);
-            }
+            MoveToDestination();
         }
         else if (_isInTouched)
             _isInTouched = false;
+    }
 
-        if (_isInTouched)
-            Debug.Log("Player is touchin the screen! => " + Time.time);
+    /// Check for correct touch
+    private bool IsTouchedForMove()
+        => _currentTouch.phase == TouchPhase.Began && !EventSystem.current.IsPointerOverGameObject(_currentTouch.fingerId);
+
+    /// Try to move
+    private void MoveToDestination()
+    {
+        if (!IsTouchedForMove())
+            return;
+
+        _isInTouched = true;
+        OnMoved?.Invoke(_currentTouch.position);
     }
 }

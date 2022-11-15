@@ -12,10 +12,14 @@ public class SpeachWindow : MonoBehaviour
 
     public void InitMessage(string message)
     {
-        _dialogueWindow.SetActive(!_dialogueWindow.activeSelf);
-        _message.text = default;
-        isTyping = false;
+        ShowMessage();
         StartCoroutine(TypeMessage(message));
+    }
+
+    public void ShowMessage()
+    {
+        _dialogueWindow.SetActive(true);
+        _message.text = default;
     }
 
     public void HideMessage()
@@ -26,6 +30,7 @@ public class SpeachWindow : MonoBehaviour
 
     private IEnumerator TypeMessage(string message)
     {
+        isTyping = true;
         for (int i = 0; i < message.Length; ++i)
         {
             _message.text += message[i];

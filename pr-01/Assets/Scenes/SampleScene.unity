@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 185052380}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 745714216}
+        m_TargetAssemblyTypeName: DialogueStart, Assembly-CSharp
+        m_MethodName: AnswerByIndexIsSelected
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &185052380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,12 +331,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1794893314, guid: 1a2925c9482f02c40a8444d5cb0657b7, type: 3}
+  m_Sprite: {fileID: -1331112451, guid: 1a2925c9482f02c40a8444d5cb0657b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.26, y: 0.52}
+  m_Size: {x: 1.04, y: 2.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -364,6 +376,7 @@ GameObject:
   - component: {fileID: 375179153}
   - component: {fileID: 375179154}
   - component: {fileID: 375179155}
+  - component: {fileID: 375179156}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -463,6 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pathFinding: {fileID: 713857559}
   _playerInput: {fileID: 375179153}
+  _playerAnimation: {fileID: 375179156}
 --- !u!114 &375179155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +493,19 @@ MonoBehaviour:
   _inventory: {fileID: 786457515}
   _dialogueStart: {fileID: 745714216}
   _playerSpeach: {fileID: 745714215}
+--- !u!114 &375179156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375179149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cebfc4e814cab04b9a7069168e9c706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anim: {fileID: 251800914}
 --- !u!1 &423416468
 GameObject:
   m_ObjectHideFlags: 0
@@ -4582,7 +4609,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1236079006}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 745714216}
+        m_TargetAssemblyTypeName: DialogueStart, Assembly-CSharp
+        m_MethodName: AnswerByIndexIsSelected
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1236079006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5164,7 +5203,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1460184129}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 745714216}
+        m_TargetAssemblyTypeName: DialogueStart, Assembly-CSharp
+        m_MethodName: AnswerByIndexIsSelected
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1460184129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5421,7 +5472,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1534354405}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 745714216}
+        m_TargetAssemblyTypeName: DialogueStart, Assembly-CSharp
+        m_MethodName: AnswerByIndexIsSelected
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1534354405
 MonoBehaviour:
   m_ObjectHideFlags: 0

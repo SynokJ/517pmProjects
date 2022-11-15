@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class PlayerWalk : MonoBehaviour
 {
-
+    [Header("Walk Parametes: ")]
     [SerializeField] private PathFinding _pathFinding;
+
+    [Header("Player Parameters: ")]
     [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private PlayerAnimation _playerAnimation;
 
     public event Action OnArrived;
 
@@ -18,33 +21,75 @@ public class PlayerWalk : MonoBehaviour
 
     private void Start()
     {
-        _playerInput.OnMoved += OnMove;
         _camera = Camera.main;
     }
+
+    #region Subscription On Event
+    private void OnEnable()
+    {
+        _playerInput.OnMoved += OnMove;
+    }
+
+    private void OnDisable()
+    {
+        _playerInput.OnMoved -= OnMove;
+    }
+    #endregion
 
     private void FixedUpdate()
     {
         if (IsPlayerReachedDestination())
-            return;
-
-
-        if (Vector2.Distance(_steps[0].position, transform.position) <= 0.01f)
         {
-            _steps.RemoveAt(0);
-
-            if (IsPlayerReachedDestination())
-                OnArrived?.Invoke();
+            _playerAnimation.ResetAnimations();
+            return;
         }
-        else
-            transform.position = Vector2.MoveTowards(transform.position, _steps[0].position, _MOVE_SPEED * Time.deltaTime);
+
+        MoveThroughSteps();
     }
 
-    private bool IsPlayerReachedDestination() => _steps == null || _steps.Count == 0;
+
+    private void MoveThroughSteps()
+    {
+        if (CanSwitchStep())
+            SetTheNextStep();
+        else
+            MoveToDestination();
+    }
+
+    private void MoveToDestination()
+    {
+        transform.position = Vector2.MoveTowards(
+                    transform.position,
+                    _steps[0].position,
+                    _MOVE_SPEED * Time.deltaTime
+                );
+
+        if (_steps.Count > 0)
+            _playerAnimation.SetAnimationByDirection(_steps[0].position - transform.position);
+    }
+
+    private void SetTheNextStep()
+    {
+        _steps.RemoveAt(0);
+
+        if (IsPlayerReachedDestination())
+            OnArrived?.Invoke();
+    }
+
 
     public void OnMove(Vector2 touchPos)
     {
         _destinationPoint = _camera.ScreenToWorldPoint(touchPos);
         _pathFinding.InitPath(transform.position, _destinationPoint);
         _steps = _pathFinding.GetPath();
+    
+        _playerAnimation.ResetAnimations();
     }
+
+    private bool IsPlayerReachedDestination()
+        => _steps == null || _steps.Count == 0;
+
+    private bool CanSwitchStep()
+        => Vector2.Distance(_steps[0].position, transform.position) <= 0.01f;
+
 }

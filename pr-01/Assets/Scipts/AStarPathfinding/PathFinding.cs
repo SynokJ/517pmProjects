@@ -12,6 +12,12 @@ public class PathFinding : MonoBehaviour
 
     private List<Node> _pathInstrcutions = new List<Node>();
 
+    private List<Node> openSet = new List<Node>();
+    private HashSet<Node> closedSet = new HashSet<Node>();
+
+    private Node startNode;
+    private Node targetNode;
+
     public void InitPath(Vector3 startPos, Vector3 targetPos)
     {
         if (targetPos == null || startPos == null)
@@ -20,24 +26,18 @@ public class PathFinding : MonoBehaviour
             return;
         }
 
-        Node startNode = _grid.GetNodeFromWorldPoint(startPos);
-        Node targetNode = _grid.GetNodeFromWorldPoint(targetPos);
+        startNode = _grid.GetNodeFromWorldPoint(startPos);
+        targetNode = _grid.GetNodeFromWorldPoint(targetPos);
 
-        if (!targetNode.isWalkable)
-        {
-            ResetPathInstructions();
-            return;
-        }
-
-        List<Node> openSet = new List<Node>();
-        HashSet<Node> closedSet = new HashSet<Node>();
+        openSet.Clear();
+        closedSet.Clear();
 
         openSet.Add(startNode);
 
         while (openSet.Count > 0)
         {
             Node currentNode = openSet[0];
-            
+
             for (int i = 1; i < openSet.Count; ++i)
                 if (openSet[i].fCost < currentNode.fCost ||
                     openSet[i].fCost == currentNode.fCost &&
@@ -52,7 +52,6 @@ public class PathFinding : MonoBehaviour
 
             if (currentNode == targetNode)
             {
-                SetPathOnMap(startNode, targetNode);
                 _pathInstrcutions = SetPathOnMap(startNode, targetNode);
                 return;
             }
@@ -83,6 +82,12 @@ public class PathFinding : MonoBehaviour
 
         while (currentNode != startNode)
         {
+            if (!currentNode.isWalkable)
+            {
+                currentNode = currentNode.parent;
+                continue;
+            }
+
             path.Add(currentNode);
             currentNode = currentNode.parent;
         }

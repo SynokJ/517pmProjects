@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+guid: 869eaca8a7fd699448287baf84414705
+=======
 guid: 1a2925c9482f02c40a8444d5cb0657b7
+>>>>>>> main
+=======
+guid: 1a2925c9482f02c40a8444d5cb0657b7
+>>>>>>> main
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -23,8 +31,16 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
   vTOnly: 0
   ignoreMasterTextureLimit: 0
+>>>>>>> main
+=======
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+>>>>>>> main
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -47,7 +63,15 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  spritePixelsToUnits: 100
+=======
+  spritePixelsToUnits: 26
+>>>>>>> main
+=======
   spritePixelsToUnits: 25
+>>>>>>> main
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -56,13 +80,26 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+=======
+=======
+>>>>>>> main
   flipbookRows: 1
   flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
+<<<<<<< HEAD
+>>>>>>> main
+  applyGammaDecoding: 0
+=======
   applyGammaDecoding: 1
+>>>>>>> main
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -81,7 +118,14 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< HEAD
+<<<<<<< HEAD
     textureCompression: 0
+=======
+    textureCompression: 1
+=======
+    textureCompression: 0
+>>>>>>> main
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,7 +137,12 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< HEAD
+    textureCompression: 1
+>>>>>>> main
+=======
     textureCompression: 0
+>>>>>>> main
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,7 +154,14 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< HEAD
+<<<<<<< HEAD
     textureCompression: 0
+=======
+    textureCompression: 1
+=======
+    textureCompression: 0
+>>>>>>> main
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,7 +173,12 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< HEAD
+    textureCompression: 1
+>>>>>>> main
+=======
     textureCompression: 0
+>>>>>>> main
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,6 +187,12 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+    sprites: []
+=======
+=======
+>>>>>>> main
     sprites:
     - serializedVersion: 2
       name: All moves Ghost Animation_0
@@ -463,6 +530,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD
+>>>>>>> main
+=======
+>>>>>>> main
     outline: []
     physicsShape: []
     bones: []
@@ -473,6 +544,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    nameFileIdTable:
+      All moves Ghost Animation_2: -444496251
+      All moves Ghost Animation_14: 937408078
+      All moves Ghost Animation_13: 260806880
+      All moves Ghost Animation_8: 767578030
+      All moves Ghost Animation_9: -1492590350
+      All moves Ghost Animation_10: -710874569
+      All moves Ghost Animation_15: 1320107713
+      All moves Ghost Animation_0: -1794893314
+      All moves Ghost Animation_1: -1973809753
+      All moves Ghost Animation_11: 1266795184
+      All moves Ghost Animation_3: -1406222098
+      All moves Ghost Animation_12: -1866663232
+      All moves Ghost Animation_5: -1421789646
+      All moves Ghost Animation_6: -2133480028
+      All moves Ghost Animation_4: -285857231
+      All moves Ghost Animation_7: -1969389060
+>>>>>>> main
+=======
     nameFileIdTable:
       All moves Ghost Animation_2: -641783132
       All moves Ghost Animation_14: 582639649
@@ -490,6 +583,7 @@ TextureImporter:
       All moves Ghost Animation_6: 283167467
       All moves Ghost Animation_4: 1919543510
       All moves Ghost Animation_7: 1478768174
+>>>>>>> main
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

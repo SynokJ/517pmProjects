@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+guid: 28c038d867ffc944fb69eb847f9734c9
+=======
 guid: 73625ef6cd825084f98ef168d1d51c96
+>>>>>>> main
+=======
+guid: 73625ef6cd825084f98ef168d1d51c96
+>>>>>>> main
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -23,8 +31,16 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
   vTOnly: 0
   ignoreMasterTextureLimit: 0
+>>>>>>> main
+=======
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+>>>>>>> main
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -33,7 +49,15 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
     filterMode: 0
+=======
+    filterMode: 1
+>>>>>>> main
+=======
+    filterMode: 0
+>>>>>>> main
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -56,13 +80,26 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+=======
+=======
+>>>>>>> main
   flipbookRows: 1
   flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
+<<<<<<< HEAD
+>>>>>>> main
+  applyGammaDecoding: 0
+=======
   applyGammaDecoding: 1
+>>>>>>> main
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -76,6 +113,10 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> main
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -124,6 +165,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
+=======
+>>>>>>> main
+=======
+>>>>>>> main
   spriteSheet:
     serializedVersion: 2
     sprites: []
@@ -137,10 +183,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<< HEAD
+<<<<<<< HEAD
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+=======
+    nameFileIdTable: {}
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+>>>>>>> main
+=======
     nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
+>>>>>>> main
   userData: 
   assetBundleName: 
   assetBundleVariant: 

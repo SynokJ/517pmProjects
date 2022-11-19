@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Rustem.Uitls;
@@ -32,10 +31,11 @@ public class CustomGrid : MonoBehaviour
         CreateGrid();
     }
 
-    public void CreateGrid()
+    public void CreateGrid(Vector2 pos = default)
     {
         _grid = new Node[_gridSizeX, _gridSizeY];
-        Vector2 worldBottomLeft = (Vector2)transform.position - new Vector2(_gridWorldSize.x / 2, _gridWorldSize.y / 2);
+        //Vector2 worldBottomLeft = (Vector2)transform.position - new Vector2(_gridWorldSize.x / 2, _gridWorldSize.y / 2);
+        Vector2 worldBottomLeft = pos - new Vector2(_gridWorldSize.x / 2, _gridWorldSize.y / 2) ;
 
         for (int x = 0; x < _gridSizeX; ++x)
             for (int y = 0; y < _gridSizeY; ++y)
@@ -46,8 +46,6 @@ public class CustomGrid : MonoBehaviour
                 _grid[x, y] = new Node(walkable, worldPoint, x, y);
             }
     }
-
-    
 
     public Node GetNodeFromWorldPoint(Vector2 worldPosition)
     {

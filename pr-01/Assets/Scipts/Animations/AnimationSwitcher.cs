@@ -7,7 +7,7 @@ public abstract class AnimationSwitcher : MonoBehaviour
 
     protected virtual void PlayAnimationByName(string name)
     {
-        if (_prevAnimName != null && !_prevAnimName.Equals(name))
+        if (_prevAnimName != null && _prevAnimName.Equals(name))
             return;
 
         if (!string.IsNullOrEmpty(_prevAnimName))

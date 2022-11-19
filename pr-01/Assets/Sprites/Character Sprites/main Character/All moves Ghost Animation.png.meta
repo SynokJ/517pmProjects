@@ -1,20 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
 guid: 869eaca8a7fd699448287baf84414705
-=======
-guid: 1a2925c9482f02c40a8444d5cb0657b7
->>>>>>> main
-=======
-guid: 1a2925c9482f02c40a8444d5cb0657b7
->>>>>>> main
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -31,16 +23,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   vTOnly: 0
   ignoreMasterTextureLimit: 0
->>>>>>> main
-=======
-  vTOnly: 0
-  ignoreMasterTextureLimit: 0
->>>>>>> main
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -52,8 +36,8 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
+    wrapU: 0
+    wrapV: 0
     wrapW: 0
   nPOTScale: 0
   lightmap: 0
@@ -63,15 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
-  spritePixelsToUnits: 26
->>>>>>> main
-=======
   spritePixelsToUnits: 25
->>>>>>> main
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -80,26 +56,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-  maxTextureSizeSet: 0
-  compressionQualitySet: 0
-  textureFormatSet: 0
-=======
-=======
->>>>>>> main
   flipbookRows: 1
   flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-<<<<<<< HEAD
->>>>>>> main
-  applyGammaDecoding: 0
-=======
   applyGammaDecoding: 1
->>>>>>> main
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -118,14 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-<<<<<<< HEAD
     textureCompression: 0
-=======
-    textureCompression: 1
-=======
-    textureCompression: 0
->>>>>>> main
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -137,12 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
->>>>>>> main
-=======
     textureCompression: 0
->>>>>>> main
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -154,14 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-<<<<<<< HEAD
     textureCompression: 0
-=======
-    textureCompression: 1
-=======
-    textureCompression: 0
->>>>>>> main
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -173,12 +118,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
->>>>>>> main
-=======
     textureCompression: 0
->>>>>>> main
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -187,12 +139,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-    sprites: []
-=======
-=======
->>>>>>> main
     sprites:
     - serializedVersion: 2
       name: All moves Ghost Animation_0
@@ -203,14 +149,14 @@ TextureImporter:
         width: 26
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f36eab4e8f9fbe542b06559d4a727a1f
-      internalID: -1331112451
+      spriteID: 771aa6537872f144ea2fbfc91cbbcae5
+      internalID: 1335879755
       vertices: []
       indices: 
       edges: []
@@ -224,14 +170,14 @@ TextureImporter:
         width: 25
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d967621925eedce43b763c648bcac6d0
-      internalID: 169875924
+      spriteID: 96433a21604b5f545acb4674436c9d28
+      internalID: 440298846
       vertices: []
       indices: 
       edges: []
@@ -245,14 +191,14 @@ TextureImporter:
         width: 28
         height: 53
       alignment: 9
-      pivot: {x: 0.55, y: 0.5}
+      pivot: {x: 0.5125313, y: 0.49999985}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d964cbe1ada3c1468985cc4b184cb5e
-      internalID: -641783132
+      spriteID: 9630310f4a285c54b894faa98e42e1b2
+      internalID: -486063658
       vertices: []
       indices: 
       edges: []
@@ -266,14 +212,14 @@ TextureImporter:
         width: 26
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 366c810c26c38be4d8d3c72651a7e2c1
-      internalID: -1845622871
+      spriteID: ccd8ca6ffe9106c449b55dfbd9ef5550
+      internalID: 275679290
       vertices: []
       indices: 
       edges: []
@@ -287,14 +233,14 @@ TextureImporter:
         width: 21
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7267c2955f87caf40869f4428e2d38f8
-      internalID: 1919543510
+      spriteID: 06d3b68058d91d846b27c822aa391996
+      internalID: 1392744961
       vertices: []
       indices: 
       edges: []
@@ -308,14 +254,14 @@ TextureImporter:
         width: 20
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a650da53aad4104ba8f8a4cc8b10350
-      internalID: 438870389
+      spriteID: 68d8f2fffc04efa4e984a7264ea28ffd
+      internalID: 1243926675
       vertices: []
       indices: 
       edges: []
@@ -329,14 +275,14 @@ TextureImporter:
         width: 21
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45784255486f9ed4da62b9762e54ed76
-      internalID: 283167467
+      spriteID: cf3ba6ae24ca6ad4397ce328d0a308d8
+      internalID: 1483620332
       vertices: []
       indices: 
       edges: []
@@ -350,14 +296,14 @@ TextureImporter:
         width: 21
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a027a1d7c4018054c9f09e80ccf99119
-      internalID: 1478768174
+      spriteID: 5ff52390615a30247868eedbc4e7a5ec
+      internalID: -1687935808
       vertices: []
       indices: 
       edges: []
@@ -371,14 +317,14 @@ TextureImporter:
         width: 29
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caf3ea43f66d706489b5cc89c02af153
-      internalID: -1705526673
+      spriteID: 148f59fed80a1134c894bd7c56d6044a
+      internalID: -177100999
       vertices: []
       indices: 
       edges: []
@@ -392,14 +338,14 @@ TextureImporter:
         width: 29
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01ab47e805ca9724d9e25fd6086d7a99
-      internalID: 1450977401
+      spriteID: 51d645d92c2879a43a17a75dc05db0ac
+      internalID: -1238454264
       vertices: []
       indices: 
       edges: []
@@ -413,14 +359,14 @@ TextureImporter:
         width: 29
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6877d20743f7fdf45a4b1a5b3b2a6336
-      internalID: 1695584536
+      spriteID: cee919613b5a3e843a91bef732ba86a1
+      internalID: 1176982915
       vertices: []
       indices: 
       edges: []
@@ -434,14 +380,14 @@ TextureImporter:
         width: 28
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb02a7134455ad54d966a1a68bc72ba6
-      internalID: -1649053274
+      spriteID: 35e24aa2314ca1a448a0ebdc1e718350
+      internalID: 598911857
       vertices: []
       indices: 
       edges: []
@@ -455,14 +401,14 @@ TextureImporter:
         width: 29
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ee58078a78686c4b990b8680a3d6c49
-      internalID: 1244286996
+      spriteID: 908e3a10467528647b25eaea9cce3417
+      internalID: -1593491285
       vertices: []
       indices: 
       edges: []
@@ -476,14 +422,14 @@ TextureImporter:
         width: 29
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db64eaf993158be4cb249d48861ee360
-      internalID: -1243389692
+      spriteID: d281201c455acf34cae16fba79f7aafa
+      internalID: 571950278
       vertices: []
       indices: 
       edges: []
@@ -497,14 +443,14 @@ TextureImporter:
         width: 29
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fc7ae46f3f7b1348b7765803c479ea3
-      internalID: 582639649
+      spriteID: 2cbeb724c05424e469e26ccd0602c51f
+      internalID: -1495170360
       vertices: []
       indices: 
       edges: []
@@ -518,72 +464,45 @@ TextureImporter:
         width: 29
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8a705c73ea6b27498a0d5564111403c
-      internalID: -1899080192
+      spriteID: b1f32a69864cf1b40b116cfb21afa57d
+      internalID: 931783341
       vertices: []
       indices: 
       edges: []
       weights: []
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> main
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 90a6da29f15d8274bbcf245e73be9b98
+    spriteID: 1333ccd640491b743bf6de365ceaf5a3
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     nameFileIdTable:
-      All moves Ghost Animation_2: -444496251
-      All moves Ghost Animation_14: 937408078
-      All moves Ghost Animation_13: 260806880
-      All moves Ghost Animation_8: 767578030
-      All moves Ghost Animation_9: -1492590350
-      All moves Ghost Animation_10: -710874569
-      All moves Ghost Animation_15: 1320107713
-      All moves Ghost Animation_0: -1794893314
-      All moves Ghost Animation_1: -1973809753
-      All moves Ghost Animation_11: 1266795184
-      All moves Ghost Animation_3: -1406222098
-      All moves Ghost Animation_12: -1866663232
-      All moves Ghost Animation_5: -1421789646
-      All moves Ghost Animation_6: -2133480028
-      All moves Ghost Animation_4: -285857231
-      All moves Ghost Animation_7: -1969389060
->>>>>>> main
-=======
-    nameFileIdTable:
-      All moves Ghost Animation_2: -641783132
-      All moves Ghost Animation_14: 582639649
-      All moves Ghost Animation_13: -1243389692
-      All moves Ghost Animation_8: -1705526673
-      All moves Ghost Animation_9: 1450977401
-      All moves Ghost Animation_10: 1695584536
-      All moves Ghost Animation_15: -1899080192
-      All moves Ghost Animation_0: -1331112451
-      All moves Ghost Animation_1: 169875924
-      All moves Ghost Animation_11: -1649053274
-      All moves Ghost Animation_3: -1845622871
-      All moves Ghost Animation_12: 1244286996
-      All moves Ghost Animation_5: 438870389
-      All moves Ghost Animation_6: 283167467
-      All moves Ghost Animation_4: 1919543510
-      All moves Ghost Animation_7: 1478768174
->>>>>>> main
+      All moves Ghost Animation_2: -486063658
+      All moves Ghost Animation_14: -1495170360
+      All moves Ghost Animation_13: 571950278
+      All moves Ghost Animation_8: -177100999
+      All moves Ghost Animation_9: -1238454264
+      All moves Ghost Animation_10: 1176982915
+      All moves Ghost Animation_15: 931783341
+      All moves Ghost Animation_0: 1335879755
+      All moves Ghost Animation_1: 440298846
+      All moves Ghost Animation_11: 598911857
+      All moves Ghost Animation_3: 275679290
+      All moves Ghost Animation_12: -1593491285
+      All moves Ghost Animation_5: 1243926675
+      All moves Ghost Animation_6: 1483620332
+      All moves Ghost Animation_4: 1392744961
+      All moves Ghost Animation_7: -1687935808
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

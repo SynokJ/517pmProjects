@@ -755,7 +755,7 @@ MonoBehaviour:
   _spawnPos:
   - {fileID: 850819173}
   - {fileID: 1473227367}
-  _gameObject: {fileID: 970128453}
+  _playerObj: {fileID: 970128453}
 --- !u!1 &773986895
 GameObject:
   m_ObjectHideFlags: 0
@@ -3950,8 +3950,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 713857561}
-        m_TargetAssemblyTypeName: MoveNextLevel, Assembly-CSharp
-        m_MethodName: DrawNextLevel
+        m_TargetAssemblyTypeName: LevelSwitch, Assembly-CSharp
+        m_MethodName: MoveNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

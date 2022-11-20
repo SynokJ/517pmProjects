@@ -33,9 +33,11 @@ public class CustomGrid : MonoBehaviour
 
     public void CreateGrid(Vector2 pos = default)
     {
+        Vector2 offset = ((Vector2)transform.position - pos);
+
         _grid = new Node[_gridSizeX, _gridSizeY];
         //Vector2 worldBottomLeft = (Vector2)transform.position - new Vector2(_gridWorldSize.x / 2, _gridWorldSize.y / 2);
-        Vector2 worldBottomLeft = pos - new Vector2(_gridWorldSize.x / 2, _gridWorldSize.y / 2) ;
+        Vector2 worldBottomLeft = pos - new Vector2(_gridWorldSize.x / 2, _gridWorldSize.y / 2);
 
         for (int x = 0; x < _gridSizeX; ++x)
             for (int y = 0; y < _gridSizeY; ++y)
@@ -43,8 +45,20 @@ public class CustomGrid : MonoBehaviour
                 Vector2 worldPoint = worldBottomLeft + new Vector2(x * _nodeDiameter + _nodeRadius, y * _nodeDiameter + _nodeRadius);
 
                 bool walkable = !(Physics2D.OverlapCircle(worldPoint, _nodeRadius, _unwalkableMask));
-                _grid[x, y] = new Node(walkable, worldPoint, x, y);
+                _grid[x, y] = new Node(walkable, worldPoint - offset, x, y);
             }
+
+        DebugArray();
+    }
+
+    private void DebugArray()
+    {
+        string res = default;
+        for (int r = 0; r < _grid.GetLength(0); ++r)
+            for (int c = 0; c < _grid.GetLength(1); ++c)
+                res += $"[{_grid[r, c].position.ToString()}] ";
+
+        Debug.Log(res);
     }
 
     public Node GetNodeFromWorldPoint(Vector2 worldPosition)

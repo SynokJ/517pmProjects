@@ -80,9 +80,11 @@ public class PlayerWalk : MonoBehaviour
     public void OnMove(Vector2 touchPos)
     {
         _destinationPoint = _camera.ScreenToWorldPoint(touchPos);
+        _517pm.Debugger.CustomDebugger.PrintContextWithTime(_destinationPoint.ToString(), true);
+
         _pathFinding.InitPath(transform.position, _destinationPoint);
         _steps = _pathFinding.GetPath();
-    
+
         _playerAnimation.ResetAnimations();
     }
 

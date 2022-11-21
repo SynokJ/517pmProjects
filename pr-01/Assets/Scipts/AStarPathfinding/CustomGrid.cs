@@ -19,6 +19,8 @@ public class CustomGrid : MonoBehaviour
     private Node[,] _grid;
     private List<Node> _path;
 
+    private Vector2 worldBottomLeft;
+
     private void Awake()
     {
         CustomUtils.GetCameraWorldSize(out float width, out float height);
@@ -35,7 +37,7 @@ public class CustomGrid : MonoBehaviour
     {
         _grid = new Node[_gridSizeX, _gridSizeY];
         //Vector2 worldBottomLeft = (Vector2)transform.position - new Vector2(_gridWorldSize.x / 2, _gridWorldSize.y / 2);
-        Vector2 worldBottomLeft = pos - new Vector2(_gridWorldSize.x / 2, _gridWorldSize.y / 2) ;
+        worldBottomLeft = pos - new Vector2(_gridWorldSize.x / 2, _gridWorldSize.y / 2);
 
         for (int x = 0; x < _gridSizeX; ++x)
             for (int y = 0; y < _gridSizeY; ++y)
@@ -45,8 +47,27 @@ public class CustomGrid : MonoBehaviour
                 bool walkable = !(Physics2D.OverlapCircle(worldPoint, _nodeRadius, _unwalkableMask));
                 _grid[x, y] = new Node(walkable, worldPoint, x, y);
             }
+
+        DebugArray();
     }
 
+    private void DebugArray()
+    {
+        string res = default;
+        for (int r = 0; r < _grid.GetLength(0); ++r)
+            for (int c = 0; c < _grid.GetLength(1); ++c)
+                res += $"[{_grid[r, c].position.ToString()}] ";
+
+        Debug.Log(res);
+    }
+
+
+    /// <summary>
+    /// TODO 
+    /// Fix the position of start Node
+    /// </summary>
+    /// <param name="worldPosition"></param>
+    /// <returns></returns>
     public Node GetNodeFromWorldPoint(Vector2 worldPosition)
     {
         float percentX = (worldPosition.x + _gridWorldSize.x / 2) / _gridWorldSize.x;

@@ -55,7 +55,6 @@ public class DialogueStart : MonoBehaviour
 
         yield return new WaitUntil(() => !_player.isTyping);
         _other.InitMessage(otherMessage);
-        _517pm.Debugger.CustomDebugger.ItWorks();
 
         if (_isStarted)
             yield break;

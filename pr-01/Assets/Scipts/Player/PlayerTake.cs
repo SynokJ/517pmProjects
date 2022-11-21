@@ -35,8 +35,6 @@ public class PlayerTake : MonoBehaviour
     /// </summary>
     public void OnDestinationReached()
     {
-        _517pm.Debugger.CustomDebugger.ItWorks(true);
-
         var hits = Physics2D.OverlapCircleAll(transform.position, _TAKE_RADIUS);
 
         foreach (Collider2D hit in hits)

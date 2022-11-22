@@ -61,6 +61,7 @@ public class DialogueStart : MonoBehaviour
 
         yield return new WaitUntil(() => !_other.isTyping);
         _playerAnswers.ShowDialogue();
+
         _isStarted = true;
     }
 

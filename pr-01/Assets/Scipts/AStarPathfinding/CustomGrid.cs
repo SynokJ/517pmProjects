@@ -47,31 +47,15 @@ public class CustomGrid : MonoBehaviour
                 bool walkable = !(Physics2D.OverlapCircle(worldPoint, _nodeRadius, _unwalkableMask));
                 _grid[x, y] = new Node(walkable, worldPoint, x, y);
             }
-
-        DebugArray();
     }
 
-    private void DebugArray()
-    {
-        string res = default;
-        for (int r = 0; r < _grid.GetLength(0); ++r)
-            for (int c = 0; c < _grid.GetLength(1); ++c)
-                res += $"[{_grid[r, c].position.ToString()}] ";
-
-        Debug.Log(res);
-    }
-
-
-    /// <summary>
-    /// TODO 
-    /// Fix the position of start Node
-    /// </summary>
-    /// <param name="worldPosition"></param>
-    /// <returns></returns>
     public Node GetNodeFromWorldPoint(Vector2 worldPosition)
     {
-        float percentX = (worldPosition.x + _gridWorldSize.x / 2) / _gridWorldSize.x;
-        float percentY = (worldPosition.y + _gridWorldSize.y / 2) / _gridWorldSize.y;
+        //float percentX = (worldPosition.x + _gridWorldSize.x / 2) / _gridWorldSize.x;
+        //float percentY = (worldPosition.y + _gridWorldSize.y / 2) / _gridWorldSize.y;
+
+        float percentX = (worldPosition.x - worldBottomLeft.x) / _gridWorldSize.x;
+        float percentY = (worldPosition.y - worldBottomLeft.y) / _gridWorldSize.y;
 
         percentX = Mathf.Clamp01(percentX);
         percentY = Mathf.Clamp01(percentY);

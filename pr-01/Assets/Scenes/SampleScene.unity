@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1270510887}
         m_TargetAssemblyTypeName: DialogueStart, Assembly-CSharp
         m_MethodName: AnswerByIndexIsSelected
         m_Mode: 3
@@ -6033,7 +6033,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1270510887}
         m_TargetAssemblyTypeName: DialogueStart, Assembly-CSharp
         m_MethodName: AnswerByIndexIsSelected
         m_Mode: 3
@@ -6083,6 +6083,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236079003}
   m_CullTransparentMesh: 1
+--- !u!114 &1270510887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3868217361974923157, guid: 723a06cbce9e26c4fa39b9169d330310, type: 3}
+  m_PrefabInstance: {fileID: 1466142515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca0b4f112584e4499beef17fc633494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1372340678
 GameObject:
   m_ObjectHideFlags: 0
@@ -6526,7 +6537,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1270510887}
         m_TargetAssemblyTypeName: DialogueStart, Assembly-CSharp
         m_MethodName: AnswerByIndexIsSelected
         m_Mode: 3
@@ -6770,6 +6781,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3868217361974923156, guid: 723a06cbce9e26c4fa39b9169d330310, type: 3}
+      propertyPath: _answersAnim
+      value: 
+      objectReference: {fileID: 1435142711}
+    - target: {fileID: 3868217361974923156, guid: 723a06cbce9e26c4fa39b9169d330310, type: 3}
+      propertyPath: _answersPanel
+      value: 
+      objectReference: {fileID: 1859313511}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 723a06cbce9e26c4fa39b9169d330310, type: 3}
 --- !u!1 &1473227366
@@ -6887,7 +6906,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1270510887}
         m_TargetAssemblyTypeName: DialogueStart, Assembly-CSharp
         m_MethodName: AnswerByIndexIsSelected
         m_Mode: 3

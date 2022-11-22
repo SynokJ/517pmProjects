@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class AnimationSwitcher : MonoBehaviour
 {
     [SerializeField] protected Animator _anim;
-    string _prevAnimName = default;
+    protected string _prevAnimName = default;
 
     protected virtual void PlayAnimationByName(string name)
     {

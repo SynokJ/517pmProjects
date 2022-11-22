@@ -21,5 +21,7 @@ public class PlayerAnimation : AnimationSwitcher
         _anim.SetBool(_MOVE_UP, false);
         _anim.SetBool(_MOVE_LEFT, false);
         _anim.SetBool(_MOVE_RIGHT, false);
+
+        _prevAnimName = default;
     }
 }

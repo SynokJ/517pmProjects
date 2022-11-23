@@ -32,8 +32,6 @@ public class LevelSwitch : MonoBehaviour
 
         _grid.CreateGrid(_mapPos[_curLevel].position);
         _levels[_curLevel].InitLevel(_playerObj);
-
-        _517pm.Debugger.CustomDebugger.PrintContextWithTime(_mapPos[_curLevel].position.ToString(), true);
     }
 
     public void MovePreviousLevel()

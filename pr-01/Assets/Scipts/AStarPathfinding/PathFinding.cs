@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,9 +37,7 @@ public class PathFinding : MonoBehaviour
             Node currentNode = openSet[0];
 
             for (int i = 1; i < openSet.Count; ++i)
-                if (openSet[i].fCost < currentNode.fCost ||
-                    openSet[i].fCost == currentNode.fCost &&
-                    openSet[i].gCost < currentNode.hCost)
+                if (IsTheBestNode(currentNode, openSet[i]))
                 {
                     currentNode = openSet[i];
                     break;
@@ -73,7 +69,12 @@ public class PathFinding : MonoBehaviour
                 }
             }
         }
+
+        _517pm.Debugger.CustomDebugger.PrintContextWithTime($"Closed: {closedSet.Count} Open: {openSet.Count}", true);
     }
+
+    private bool IsTheBestNode(Node current, Node other)
+        => other.fCost < current.fCost || other.fCost == current.fCost && other.gCost < current.hCost;
 
     private List<Node> SetPathOnMap(Node startNode, Node endNode)
     {
@@ -94,9 +95,6 @@ public class PathFinding : MonoBehaviour
 
         path.Reverse();
         _grid.SetPath(path);
-
-        if (path.Count == 0)
-            return null;
 
         return path;
     }

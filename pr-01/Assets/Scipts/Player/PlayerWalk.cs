@@ -12,6 +12,10 @@ public class PlayerWalk : MonoBehaviour
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private PlayerAnimation _playerAnimation;
 
+    [Header("Dialogue Parameters: ")]
+    [SerializeField] private DialogueStart _dialogueStart;
+    [SerializeField] private SpeachWindow _playerSpeach;
+
     public event Action OnArrived;
 
     private Camera _camera;
@@ -47,6 +51,14 @@ public class PlayerWalk : MonoBehaviour
         MoveThroughSteps();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<I_Interactable>() != null)
+        {
+            _steps.Clear();
+            OnArrived?.Invoke();
+        }
+    }
 
     private void MoveThroughSteps()
     {
@@ -80,12 +92,17 @@ public class PlayerWalk : MonoBehaviour
     public void OnMove(Vector2 touchPos)
     {
         _destinationPoint = _camera.ScreenToWorldPoint(touchPos);
-        _517pm.Debugger.CustomDebugger.PrintContextWithTime(_destinationPoint.ToString(), true);
 
         _pathFinding.InitPath(transform.position, _destinationPoint);
         _steps = _pathFinding.GetPath();
 
         _playerAnimation.ResetAnimations();
+
+        if (_playerSpeach.IsPanelActive() || _dialogueStart.IsDialogueActive())
+        {
+            _playerSpeach.HideMessage();
+            _dialogueStart.EndDialogue();
+        }
     }
 
     private bool IsPlayerReachedDestination()
@@ -93,5 +110,4 @@ public class PlayerWalk : MonoBehaviour
 
     private bool CanSwitchStep()
         => Vector2.Distance(_steps[0].position, transform.position) <= 0.01f;
-
 }

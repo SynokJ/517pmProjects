@@ -9,6 +9,8 @@ public class PlayerInput : MonoBehaviour
     private bool _isInTouched;
     private Touch _currentTouch;
 
+    private I_Interactable _interactable;
+
     void Update()
     {
         if (Input.touchCount > 0)
@@ -31,6 +33,8 @@ public class PlayerInput : MonoBehaviour
             return;
 
         _isInTouched = true;
+        _interactable = null;
+
         OnMoved?.Invoke(_currentTouch.position);
     }
 }

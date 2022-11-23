@@ -12,7 +12,6 @@ public class CameraReslution : MonoBehaviour
     void Awake()
     {
         _sceneSize = _sceneTr.localScale;
-        _517pm.Debugger.CustomDebugger.PrintContextWithTime(_sceneSize.ToString(), true);
 
         _unitsPerPixel = _sceneSize.x / Screen.width;
         float desiredHalfHeight = 0.5f * _unitsPerPixel * Screen.height;

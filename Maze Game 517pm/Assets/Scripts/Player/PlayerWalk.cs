@@ -3,8 +3,15 @@ using UnityEngine;
 public class PlayerWalk : MonoBehaviour
 {
     [SerializeField] private JoyStick _joystick;
+    [SerializeField] private Rigidbody2D _rb;
 
-    public void InitMovement(Vector2 pos) => _joystick?.ShowJoystick(pos);
-    public void OnMove(Vector2 pos) => _joystick.MoveJoystick(pos);
-    public void StopMovenent() => _joystick.HideJoystick();
+    private const float _MOVEMENT_SPEED = 3.0f;
+
+    private void FixedUpdate()
+    {
+        if (_joystick.vec.y != 0)
+            _rb.velocity = _joystick.vec * _MOVEMENT_SPEED;
+        else 
+            _rb.velocity = Vector2.zero;
+    }
 }

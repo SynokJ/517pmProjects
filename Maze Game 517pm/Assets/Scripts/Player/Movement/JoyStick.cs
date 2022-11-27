@@ -17,7 +17,7 @@ public class JoyStick : MonoBehaviour
     private UnityEngine.UI.Image _joystickRenderer;
     private UnityEngine.UI.Image _borderRenderer;
 
-    private void Awake()
+    private void Start()
     {
         _joystickRenderer = innerCircle?.GetComponent<UnityEngine.UI.Image>();
         _borderRenderer = outerCircle?.GetComponent<UnityEngine.UI.Image>();
@@ -35,8 +35,11 @@ public class JoyStick : MonoBehaviour
     }
 
     // stop to touch the Screen
-    public void PointerUp() => vec = Vector2.zero;
-
+    public void PointerUp()
+    {
+        HideJoystick();
+        vec = Vector2.zero;
+    }
 
     // drag the finger on Screen 
     public void Drag(UnityEngine.EventSystems.BaseEventData bed)
@@ -53,5 +56,11 @@ public class JoyStick : MonoBehaviour
     {
         _joystickRenderer.enabled = true;
         _borderRenderer.enabled = true;
+    }
+
+    public void HideJoystick()
+    {
+        _joystickRenderer.enabled = false;
+        _borderRenderer.enabled = false;
     }
 }
